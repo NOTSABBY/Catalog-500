@@ -1,0 +1,180 @@
+# ==============================================================================
+# 500Products - Root .gitignore
+# Project Stack: React 19 + TypeScript + Vite (Frontend) & Python 3.14 (Pipeline)
+# ==============================================================================
+
+# ------------------------------------------------------------------------------
+# 1. Python & Virtual Environments
+# ------------------------------------------------------------------------------
+.venv/
+.venv311/
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+python-venv/
+
+# Bytecode and compiled Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyo
+*.pyd
+
+# Python testing, type checking, and coverage
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.hypothesis/
+.coverage
+.coverage.*
+htmlcov/
+nosetests.xml
+coverage.xml
+*.cover
+
+# Python packaging and distributions
+build/
+*.egg-info/
+.installed.cfg
+*.egg
+eggs/
+develop-eggs/
+dist-py/
+sdist/
+wheels/
+
+# ------------------------------------------------------------------------------
+# 2. JavaScript / Node.js & Vite (Frontend)
+# ------------------------------------------------------------------------------
+# Node package dependencies
+node_modules/
+frontend/node_modules/
+.pnp
+.pnp.js
+
+# Build outputs (Vite production bundle in frontend/dist)
+dist/
+dist-ssr/
+frontend/dist/
+frontend/dist-ssr/
+
+# Vite & compiler caches
+.vite/
+frontend/.vite/
+*.tsbuildinfo
+
+# Package manager logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Frontend test coverage
+coverage/
+frontend/coverage/
+
+# ------------------------------------------------------------------------------
+# 3. Environment Secrets & Credentials (NEVER COMMIT)
+# ------------------------------------------------------------------------------
+.env
+.env.*
+*.env
+*.env.*
+*.local
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+frontend/.env
+frontend/.env.*
+pipeline/.env
+pipeline/.env.*
+
+# Safe exception: Preserve environment template and example files
+!.env.example
+!.env*.example
+!.env.template
+!frontend/.env.example
+!pipeline/.env.example
+
+# Private keys, certificates, and cloud credentials
+*.pem
+*.key
+*.cert
+*.crt
+*.pfx
+*.p12
+*.pub
+id_rsa
+id_ed25519
+secrets/
+*secret*.json
+credentials.json
+client_secret*.json
+
+# ------------------------------------------------------------------------------
+# 4. Pipeline Checkpoints & Generated AI/ML Artifacts
+# ------------------------------------------------------------------------------
+# Intermediate pipeline execution cache (reproducible from source catalog)
+pipeline/checkpoint_cache.json
+checkpoint_cache.json
+*.checkpoint.json
+*.cache.json
+*.embedding.bin
+*.safetensors
+*.bin
+
+# ------------------------------------------------------------------------------
+# 5. Operating System & IDE Files
+# ------------------------------------------------------------------------------
+# macOS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+[Dd]esktop.ini
+$RECYCLE.BIN/
+
+# JetBrains / PyCharm / WebStorm
+.idea/
+
+# Visual Studio Code (ignore user workspace settings, preserve recommended extensions)
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+!.vscode/launch.json
+
+# Visual Studio / Windows project files
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+*~
+
+# ------------------------------------------------------------------------------
+# 6. Critical Project Assets: Explicitly Preserved
+# ------------------------------------------------------------------------------
+# Master source dataset (Excel)
+!authentic_packaged_food_catalog_500.xlsx
+
+# Manifests and dependency locks
+!requirements.txt
+!frontend/package.json
+!frontend/package-lock.json
+
+# Enriched catalog and category datasets required by frontend
+!frontend/public/data/
+!frontend/public/data/enriched_catalog_500.json
+!frontend/public/data/categories/
+!frontend/public/data/categories/*.json
